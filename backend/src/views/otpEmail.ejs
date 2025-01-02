@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <style>
+        /* Tailwind-inspired inline styles for email clients */
+        body {
+            background-color: #f3f4f6;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: #1d4ed8;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header h1 {
+            color: #ffffff;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .header p {
+            color: #ffffff;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .header .icon {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .icon img {
+            width: 60px;
+            animation: bounce 1s infinite alternate;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .content p {
+            font-size: 16px;
+            color: #4b5563;
+        }
+
+        .otp {
+            margin-top: 20px;
+            background-color: #f3f4f6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            color: #1f2937;
+        }
+
+        .btn {
+            margin-top: 20px;
+            display: inline-block;
+            background-color: black;
+            /* Changed to black */
+            color: #ffffff;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #333;
+            /* Slightly lighter on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer {
+            background-color: #f3f4f6;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        .footer .footer-icon img {
+            width: 30px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header with animated icon -->
+        <div class="header">
+            <div class="icon">
+                <img src="https://img.icons8.com/?size=100&id=82861&format=png&color=000000" alt="Success Icon">
+            </div>
+            <h1>Verify Your Account</h1>
+            <p>Your OTP code is here. Use it to complete your verification.</p>
+        </div>
+
+        <!-- Content Section -->
+        <div class="content">
+            <p>Hello <%= profileName %>,</p>
+            <p>Please use the following One-Time Password (OTP) to verify your account:</p>
+            <div class="otp">
+                <%= otp %>
+            </div>
+            <p>This OTP is valid for the next 10 minutes. Please do not share it with anyone.</p>
+        </div>
+
+        <!-- Footer Section with Icons -->
+        <div class="footer">
+            <p>If you didn't request this, you can ignore this email.</p>
+            <div class="footer-icon">
+                <img src="https://img.icons8.com/?size=100&id=94652&format=png&color=000000" alt="Email Icon">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
